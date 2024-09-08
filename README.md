@@ -10,9 +10,8 @@ Este projeto consiste em uma página web que permite aos usuários pesquisar por
 
 ## Funcionalidades
 
-- **Pesquisa de Jogos**: Você pode digitar um termo na barra de pesquisa para procurar jogos pelo nome, mecânicas ou tags.
+- **Pesquisa de Jogos**: Você pode digitar um termo na barra de pesquisa para procurar jogos pelo nome, mecânicas ou palavras-chaves.
 - **Exibição de Resultados**: Os resultados da pesquisa são exibidos em uma grade responsiva, com informações detalhadas sobre cada jogo.
-- **Alteração de Fundo**: O fundo da página muda após a pesquisa para uma imagem mais simples.
 
 ## Estrutura do Projeto
 
@@ -22,14 +21,15 @@ Este projeto consiste em uma página web que permite aos usuários pesquisar por
 - `style.css`: Folha de estilos para a página, incluindo layout e aparência.
 - `dados.js`: Contém a base de dados com informações sobre os jogos.
 - `app.js`: Contém a lógica de pesquisa e manipulação de dados para exibir resultados.
+- `background1.png`: É a imagem de fundo utilizada
 
 ### Base de Dados (dados.js)
 
 A base de dados é uma lista de objetos JavaScript onde cada objeto representa um jogo de tabuleiro. Cada jogo possui os seguintes atributos:
 
 - `nome`: Nome do jogo.
-- `descricao`: Descrição do jogo.
 - `editora`: Editora responsável pelo jogo.
+- - `descricao`: Descrição do jogo.
 - `numeroJogadores`: Número mínimo e máximo de jogadores.
 - `idadeRecomendada`: Idade recomendada para o jogo.
 - `tempoMedio`: Tempo médio de jogo.
@@ -40,16 +40,18 @@ A base de dados é uma lista de objetos JavaScript onde cada objeto representa u
 
 ### Pesquisa (app.js)
 
-A função `pesquisar()` faz o seguinte:
+Este arquivo contém a lógica para a pesquisa e exibição dos resultados. Veja a seguir uma descrição detalhada das funções principais:
 
-1. Adiciona uma classe ao body para alterar o estilo da página após a pesquisa.
-2. Obtém o valor do campo de pesquisa e o converte para minúsculas.
+A função `primeiraLetraMaiuscula()` capitaliza a primeira letra de um texto.
+
+E a função `pesquisar()` realiza a pesquisa com base no valor inserido pelo usuário e atualiza a exibição dos resultados.
+
+1. Obtém o valor do campo de pesquisa e o converte para minúsculas.
 3. Filtra os dados com base no campo de pesquisa.
 4. Exibe os resultados em uma grade com informações detalhadas sobre cada jogo.
 
 ### Estilos (style.css)
 
-- **Centralização do Campo de Pesquisa**: O campo de pesquisa é centralizado na página e se move para o topo quando os resultados são exibidos.
 - **Layout dos Resultados**: Os resultados são exibidos em uma grade de 3 colunas com um layout responsivo.
 
 ## Como Usar
@@ -58,9 +60,6 @@ A função `pesquisar()` faz o seguinte:
 2. Digite um termo na barra de pesquisa para encontrar jogos que correspondem ao critério.
 3. Visualize os resultados na grade abaixo da barra de pesquisa.
 
-## Contribuições
-
-Se você deseja contribuir para o projeto, sinta-se à vontade para enviar pull requests ou abrir issues. Agradecemos qualquer feedback ou sugestão para melhorar o projeto!
 
 ## Contato
 

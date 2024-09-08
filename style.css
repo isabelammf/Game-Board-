@@ -1,0 +1,115 @@
+/* Importa a fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+/* Estiliza o corpo da página */
+body {
+    font-family: "Poppins", sans-serif;  /* Define a fonte padrão da página */
+    background-image: url('background1.png'); /* Define a imagem de fundo da página */
+    background-size: cover; /* Faz com que a imagem de fundo cubra toda a área disponível */
+    background-position: center center; /* Centraliza a imagem de fundo vertical e horizontalmente */
+    background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+    
+    display: flex; /* Usa Flexbox para layout do corpo da página */
+    flex-direction: column; /* Alinha os itens do corpo verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    height: 100vh; /* Define a altura do corpo como 100% da altura da viewport */
+    margin: 0; /* Remove margens padrão do corpo */
+    padding: 0; /* Remove preenchimento padrão do corpo */
+}
+
+/* Cria uma sobreposição com transparência sobre toda a página */
+.overlay {
+    position: absolute; /* Posiciona o overlay em relação ao seu elemento pai mais próximo com posicionamento relativo */
+    top: 0; /* Alinha o overlay ao topo do elemento pai */
+    left: 0; /* Alinha o overlay à esquerda do elemento pai */
+    width: 100%; /* Define a largura do overlay como 100% da largura do elemento pai */
+    height: 100%; /* Define a altura do overlay como 100% da altura do elemento pai */
+    background-color: rgba(0, 0, 0, 0.7); /* Define uma cor de fundo preta com 70% de opacidade para criar um efeito de sobreposição */
+}
+
+/* Estiliza os títulos h1 */
+h1 {
+    font-size: 2.5rem; /* Tamanho da fonte */
+    color: #ffffff; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    letter-spacing: 0.4rem; /* Espaçamento entre letras */
+}
+
+/* Estiliza as seções da página */
+section {
+    display: flex; /* Usa Flexbox para layout */
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    margin-bottom: 3rem; /* Espaçamento abaixo de cada seção */
+}
+
+/* Estiliza os inputs dentro das seções */
+section input {
+    width: 30rem; /* Largura dos inputs */
+    border: none; /* Remove a borda padrão */
+    padding: 1rem; /* Espaçamento interno */
+    border-radius: 1rem; /* Borda arredondada */
+    margin-bottom: 1rem; /* Espaçamento abaixo dos inputs */
+    color: #45474B; /* Cor do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+/* Estiliza os botões dentro das seções */
+section button {
+    padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 1.5rem; /* Borda arredondada */
+    background-color: #b03215; /* Cor de fundo do botão */
+    color: #F5F7F8; /* Cor do texto do botão */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+/* Estiliza a caixa de resultados da pesquisa */
+.pesquisa-ativa .resultados-pesquisa {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: repeat(2, 1fr); /* 3 colunas de largura fixa */
+    gap: 20px; /* Espaço entre os itens */
+    margin: 20px 50px 0 50px;
+    padding: 1rem;
+    height: 46vh; /* Altura máxima da caixa de resultados */
+    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+}
+
+/* Estiliza cada item de resultado */
+.item-resultado {
+    background: #e5e5e5; /* Cor de fundo dos itens */
+    border-radius: 0.7rem; /* Borda arredondada */
+    padding: 1rem; /* Espaçamento interno */
+    margin-bottom: 1rem; /* Espaçamento abaixo dos itens */
+}
+
+/* Estiliza os links dentro dos itens de resultado */
+.item-resultado a {
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    color: #913000; /* Cor do texto dos links */
+    font-size: 1.5rem; /* Tamanho da fonte */
+}
+
+/* Estiliza a descrição meta dentro dos itens de resultado */
+.descricao-meta {
+    color: #2d2d2d; /* Cor do texto */
+    margin: 0.5rem 0; /* Margem acima e abaixo */
+}
+
+/* Estiliza o rodapé da página */
+footer {
+    background-color: #242424; /* Cor de fundo do rodapé */
+    color: #ffffff; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 0; /* Espaçamento interno */
+    width: 100%; /* Largura total da página */
+    position: absolute; /* Posiciona o rodapé */
+    bottom: 0; /* Alinha ao fundo da página */
+    font-size: 1rem; /* Tamanho da fonte */
+}
+

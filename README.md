@@ -29,7 +29,7 @@ A base de dados é uma lista de objetos JavaScript onde cada objeto representa u
 
 - `nome`: Nome do jogo.
 - `editora`: Editora responsável pelo jogo.
-- - `descricao`: Descrição do jogo.
+- `descricao`: Descrição do jogo.
 - `numeroJogadores`: Número mínimo e máximo de jogadores.
 - `idadeRecomendada`: Idade recomendada para o jogo.
 - `tempoMedio`: Tempo médio de jogo.

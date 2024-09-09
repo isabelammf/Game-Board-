@@ -1,40 +1,40 @@
 /* Importa a fonte do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-
 /* Estiliza o corpo da página */
 body {
     font-family: "Poppins", sans-serif;  /* Define a fonte padrão da página */
-    background-image: url('background1.png'); /* Define a imagem de fundo da página */
+    background-image: url('1.png'); /* Define a imagem de fundo da página */
     background-size: cover; /* Faz com que a imagem de fundo cubra toda a área disponível */
     background-position: center center; /* Centraliza a imagem de fundo vertical e horizontalmente */
     background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
-    
-    display: flex; /* Usa Flexbox para layout do corpo da página */
-    flex-direction: column; /* Alinha os itens do corpo verticalmente */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
+
+    display: flex; /* Usa Flexbox para layout */
+    flex-direction: column; /* Alinha os itens na vertical */
     height: 100vh; /* Define a altura do corpo como 100% da altura da viewport */
     margin: 0; /* Remove margens padrão do corpo */
     padding: 0; /* Remove preenchimento padrão do corpo */
+    transition: background-image 0.3s ease-in-out; /* Transição suave para a mudança de fundo */
 }
 
-/* Cria uma sobreposição com transparência sobre toda a página */
-.overlay {
-    position: absolute; /* Posiciona o overlay em relação ao seu elemento pai mais próximo com posicionamento relativo */
-    top: 0; /* Alinha o overlay ao topo do elemento pai */
-    left: 0; /* Alinha o overlay à esquerda do elemento pai */
-    width: 100%; /* Define a largura do overlay como 100% da largura do elemento pai */
-    height: 100%; /* Define a altura do overlay como 100% da altura do elemento pai */
-    background-color: rgba(0, 0, 0, 0.7); /* Define uma cor de fundo preta com 70% de opacidade para criar um efeito de sobreposição */
+/* Estiliza o corpo da página quando a pesquisa está ativa */
+.pesquisa-ativa {
+    background-image: url('2.png'); /* Altera a imagem de fundo quando a pesquisa está ativa */
+}
+
+main {
+    display: flex; /* Usa Flexbox para layout */
+    flex: 1; /* Permite que o main preencha o espaço disponível */
+    flex-direction: column; /* Alinha os itens na vertical */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
 }
 
 /* Estiliza os títulos h1 */
 h1 {
-    font-size: 2.5rem; /* Tamanho da fonte */
-    color: #ffffff; /* Cor do texto */
+    font-size: 2.5rem; /* Define o tamanho da fonte dos títulos */
+    color: #ffffff; /* Define a cor do texto dos títulos */
     text-align: center; /* Alinha o texto ao centro */
-    letter-spacing: 0.4rem; /* Espaçamento entre letras */
+    letter-spacing: 0.4rem; /* Define o espaçamento entre letras */
 }
 
 /* Estiliza as seções da página */
@@ -42,74 +42,77 @@ section {
     display: flex; /* Usa Flexbox para layout */
     flex-direction: column; /* Alinha os itens na vertical */
     align-items: center; /* Centraliza os itens horizontalmente */
-    margin-bottom: 3rem; /* Espaçamento abaixo de cada seção */
+    margin-bottom: 1rem; /* Espaço abaixo de cada seção */
 }
 
 /* Estiliza os inputs dentro das seções */
 section input {
-    width: 30rem; /* Largura dos inputs */
-    border: none; /* Remove a borda padrão */
-    padding: 1rem; /* Espaçamento interno */
-    border-radius: 1rem; /* Borda arredondada */
-    margin-bottom: 1rem; /* Espaçamento abaixo dos inputs */
-    color: #45474B; /* Cor do texto */
-    font-size: 1rem; /* Tamanho da fonte */
-    box-sizing: border-box; /* Inclui padding e border na largura total */
+    width: 30rem; /* Define a largura dos inputs */
+    border: none; /* Remove a borda padrão dos inputs */
+    padding: 1rem; /* Define o espaçamento interno dos inputs */
+    border-radius: 1rem; /* Arredonda os cantos dos inputs */
+    margin-bottom: 1rem; /* Define o espaçamento abaixo dos inputs */
+    color: #45474B; /* Define a cor do texto dentro dos inputs */
+    font-size: 1rem; /* Define o tamanho da fonte dentro dos inputs */
+    box-sizing: border-box; /* Inclui padding e border na largura total dos inputs */
 }
 
 /* Estiliza os botões dentro das seções */
 section button {
-    padding: 0.8rem 1.2rem; /* Espaçamento interno do botão */
-    border: none; /* Remove a borda padrão */
-    border-radius: 1.5rem; /* Borda arredondada */
-    background-color: #b03215; /* Cor de fundo do botão */
-    color: #F5F7F8; /* Cor do texto do botão */
-    font-size: 1rem; /* Tamanho da fonte */
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    padding: 0.8rem 1.2rem; /* Define o espaçamento interno do botão */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 1.5rem; /* Arredonda os cantos do botão */
+    background-color: #ff66c4; /* Define a cor de fundo do botão */
+    color: #000000; /* Define a cor do texto do botão */
+    font-size: 1rem; /* Define o tamanho da fonte dentro do botão */
+    cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
 }
 
-/* Estiliza a caixa de resultados da pesquisa */
+/* Estiliza a caixa de resultados da pesquisa quando a pesquisa está ativa */
 .pesquisa-ativa .resultados-pesquisa {
-    display: grid;
-    align-items: stretch;
-    grid-template-columns: repeat(2, 1fr); /* 3 colunas de largura fixa */
-    gap: 20px; /* Espaço entre os itens */
-    margin: 20px 50px 0 50px;
-    padding: 1rem;
-    height: 46vh; /* Altura máxima da caixa de resultados */
+    display: grid; /* Usa grid layout para a caixa de resultados */
+    align-items: stretch; /* Faz com que os itens se estiquem para preencher a área disponível */
+    grid-template-columns: repeat(2, 1fr); /* Define 2 colunas de largura fixa */
+    gap: 20px; /* Define o espaço entre os itens */
+    margin: 20px 10rem 0 10rem; /* Define as margens ao redor da caixa de resultados */
+    padding: 1rem; /* Define o espaçamento interno da caixa de resultados */
+    height: 46vh; /* Define a altura máxima da caixa de resultados */
     overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+}
+
+/* Estiliza a caixa de resultados da pesquisa quando a pesquisa está ativa no modo de visualização de impressão */
+.pesquisa-ativa-p .resultados-pesquisa {
+    display: flex; /* Usa Flexbox para layout */
+    align-items: center; /* Alinha os itens ao centro verticalmente */
+    color: #ffffff; /* Define a cor do texto dentro dos itens de resultado */
 }
 
 /* Estiliza cada item de resultado */
 .item-resultado {
-    background: #e5e5e5; /* Cor de fundo dos itens */
-    border-radius: 0.7rem; /* Borda arredondada */
-    padding: 1rem; /* Espaçamento interno */
-    margin-bottom: 1rem; /* Espaçamento abaixo dos itens */
+    background: #e5e5e5; /* Define a cor de fundo dos itens de resultado */
+    border-radius: 0.7rem; /* Arredonda os cantos dos itens de resultado */
+    padding: 1rem; /* Define o espaçamento interno dos itens de resultado */
+    margin-bottom: 1rem; /* Define o espaçamento abaixo dos itens de resultado */
 }
 
 /* Estiliza os links dentro dos itens de resultado */
-.item-resultado a {
-    text-decoration: none; /* Remove o sublinhado padrão dos links */
-    color: #913000; /* Cor do texto dos links */
-    font-size: 1.5rem; /* Tamanho da fonte */
+.item-resultado h2 {
+    color: #602047; /* Define a cor do texto dos links */
+    font-size: 1.5rem; /* Define o tamanho da fonte dos links */
 }
 
 /* Estiliza a descrição meta dentro dos itens de resultado */
 .descricao-meta {
-    color: #2d2d2d; /* Cor do texto */
-    margin: 0.5rem 0; /* Margem acima e abaixo */
+    color: #2d2d2d; /* Define a cor do texto da descrição meta */
+    margin: 0.5rem 0; /* Define a margem acima e abaixo da descrição meta */
 }
 
 /* Estiliza o rodapé da página */
 footer {
-    background-color: #242424; /* Cor de fundo do rodapé */
-    color: #ffffff; /* Cor do texto */
+    background-color: #242424; /* Define a cor de fundo do rodapé */
+    color: #ffffff; /* Define a cor do texto do rodapé */
     text-align: center; /* Alinha o texto ao centro */
-    padding: 0; /* Espaçamento interno */
-    width: 100%; /* Largura total da página */
-    position: absolute; /* Posiciona o rodapé */
-    bottom: 0; /* Alinha ao fundo da página */
-    font-size: 1rem; /* Tamanho da fonte */
+    padding: 0; /* Remove o preenchimento interno do rodapé */
+    width: 100%; /* Define a largura total do rodapé */
+    font-size: 1rem; /* Define o tamanho da fonte do rodapé */
 }
-

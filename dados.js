@@ -60,78 +60,6 @@ let dados = [
         tags: ["party game", "dedução", "comunicação", "estratégia", "jogo de tabuleiro"]
     },
     {
-        nome: "7 Wonders",
-        editora: "Repos Production",
-        descricao: "Desenvolva sua civilização e construa maravilhas para ganhar pontos de vitória através das eras.",
-        numeroJogadores: { min: 2, max: 7 },
-        idadeRecomendada: 10,
-        tempoMedio: "30 minutos",
-        mecanicas: ["cartas", "construção de civilização"],
-        complexidade: "média",
-        avaliacao: 9,
-        tags: ["estratégia", "civilização", "cartas", "jogo de tabuleiro"]
-    },
-    {
-        nome: "Azul",
-        editora: "Plan B Games",
-        descricao: "Complete padrões e construa mosaicos com peças coloridas em um jogo de estratégia e estética.",
-        numeroJogadores: { min: 2, max: 4 },
-        idadeRecomendada: 8,
-        tempoMedio: "30-45 minutos",
-        mecanicas: ["colocação de peças", "padrões"],
-        complexidade: "baixa",
-        avaliacao: 8.7,
-        tags: ["abstrato", "estratégia", "família", "jogo de tabuleiro", "padrões"]
-    },
-    {
-        nome: "Gloomhaven",
-        editora: "Cephalofair Games",
-        descricao: "Um jogo de aventura cooperativo e em campanha com exploração e combate tático.",
-        numeroJogadores: { min: 1, max: 4 },
-        idadeRecomendada: 14,
-        tempoMedio: "60-120 minutos",
-        mecanicas: ["cooperativo", "campanha", "exploração"],
-        complexidade: "alta",
-        avaliacao: 9.4,
-        tags: ["cooperativo", "aventura", "fantasia", "alta complexidade", "jogo de tabuleiro"]
-    },
-    {
-        nome: "Betrayal at House on the Hill",
-        editora: "Avalon Hill",
-        descricao: "Explore uma mansão assombrada e descubra segredos enquanto um jogador se torna o traidor.",
-        numeroJogadores: { min: 3, max: 6 },
-        idadeRecomendada: 12,
-        tempoMedio: "60-90 minutos",
-        mecanicas: ["exploração", "temático", "traição"],
-        complexidade: "média",
-        avaliacao: 8.5,
-        tags: ["horror", "temático", "exploração", "jogo de tabuleiro", "traição"]
-    },
-    {
-        nome: "Splendor",
-        editora: "Space Cowboys",
-        descricao: "Adquira gemas e cartas para construir seu império comercial e ganhar a maior quantidade de pontos.",
-        numeroJogadores: { min: 2, max: 4 },
-        idadeRecomendada: 10,
-        tempoMedio: "30 minutos",
-        mecanicas: ["coleção de cartas", "economia"],
-        complexidade: "baixa",
-        avaliacao: 8.6,
-        tags: ["estratégia", "coleção de cartas", "jogo de tabuleiro", "economia"]
-    },
-    {
-        nome: "Secret Hitler",
-        editora: "Big Potato Games",
-        descricao: "Um jogo de dedução e engano onde os jogadores tentam descobrir quem é o Secret Hitler antes que seja tarde demais.",
-        numeroJogadores: { min: 5, max: 10 },
-        idadeRecomendada: 12,
-        tempoMedio: "45 minutos",
-        mecanicas: ["dedução", "engano", "partido político"],
-        complexidade: "média",
-        avaliacao: 8.7,
-        tags: ["dedução", "engano", "party game", "jogo de tabuleiro", "política"]
-    },
-    {
         nome: "Love Letter",
         editora: "Z-Man Games",
         descricao: "Use dedução e estratégia para entregar sua carta à princesa e ganhar seu favor.",
@@ -142,30 +70,6 @@ let dados = [
         complexidade: "baixa",
         avaliacao: 8.5,
         tags: ["estratégia", "dedução", "jogo de cartas", "rápido", "jogo de tabuleiro"]
-    },
-    {
-        nome: "Viticulture",
-        editora: "Stonemaier Games",
-        descricao: "Gerencie uma vinícola e produza vinhos para conquistar o maior número de pontos de vitória.",
-        numeroJogadores: { min: 1, max: 6 },
-        idadeRecomendada: 14,
-        tempoMedio: "45-90 minutos",
-        mecanicas: ["gestão de trabalhadores", "economia", "temático"],
-        complexidade: "média",
-        avaliacao: 8.7,
-        tags: ["estratégia", "vinho", "gestão de recursos", "jogo de tabuleiro"]
-    },
-    {
-        nome: "The Crew",
-        editora: "Kosmos",
-        descricao: "Trabalhe com sua equipe para completar missões no espaço, resolvendo desafios de cartas ao longo do caminho.",
-        numeroJogadores: { min: 2, max: 4 },
-        idadeRecomendada: 10,
-        tempoMedio: "20-60 minutos",
-        mecanicas: ["cooperativo", "jogo de cartas", "missões"],
-        complexidade: "média",
-        avaliacao: 8.6,
-        tags: ["cooperativo", "estratégia", "jogo de cartas", "missões", "jogo de tabuleiro"]
     },
     {
         nome: "Decrypto",
@@ -204,32 +108,7 @@ let dados = [
         tags: ["estratégia", "conflito", "mitologia", "jogo de tabuleiro"]
     },
     {
-        nome: "Agricola",
-        editora: "Z-Man Games",
-        descricao: "Administre sua fazenda, plantando e criando animais para garantir o crescimento e a prosperidade da sua família.",
-        numeroJogadores: { min: 1, max: 5 },
-        idadeRecomendada: 12,
-        tempoMedio: "30-150 minutos",
-        mecanicas: ["gestão de recursos", "gestão de trabalhadores"],
-        complexidade: "alta",
-        avaliacao: 8.8,
-        tags: ["estratégia", "gestão de recursos", "fazenda", "jogo de tabuleiro"]
-    },
-    {
-        nome: "Everdell",
-        editora: "Starling Games",
-        descricao: "Construa e desenvolva uma cidade de criaturas em um mundo de fantasia com mecânicas de colocação de trabalhadores e coleção de cartas.",
-        numeroJogadores: { min: 1, max: 4 },
-        idadeRecomendada: 10,
-        tempoMedio: "40-80 minutos",
-        mecanicas: ["gestão de trabalhadores", "coleção de cartas", "fantasia"],
-        complexidade: "média",
-        avaliacao: 8.8,
-        tags: ["fantasia", "estratégia", "gestão de trabalhadores", "jogo de tabuleiro"]
-    },
-    {
         nome: "Spirit Island",
-        editora: "Greater Than Games",
         descricao: "Defenda sua ilha de invasores estrangeiros em um jogo cooperativo de estratégia com alta complexidade.",
         numeroJogadores: { min: 1, max: 4 },
         idadeRecomendada: 13,
@@ -238,5 +117,30 @@ let dados = [
         complexidade: "alta",
         avaliacao: 9.2,
         tags: ["cooperativo", "estratégia", "temático", "jogo de tabuleiro", "alta complexidade"]
+    },
+    {
+        nome: "Controle de Recursos - Explicação da mecânica",
+        descricao: "Nesta mecânica, os jogadores precisam gerenciar recursos limitados, como dinheiro, materiais ou pontos. O objetivo é alocar esses recursos de forma estratégica para alcançar metas específicas, como construir estruturas, desenvolver habilidades ou cumprir objetivos. É comum em jogos de estratégia e economia.",
+        tags: ["gestão de recursos", "economia", "estratégia", "alocação de recursos", "mecânicas"]
+    },
+    {
+        nome: "Trilha - Explicação da mecânica",
+        descricao: "Na mecânica de trilha, os jogadores movem suas peças ao longo de um caminho ou trilha no tabuleiro. À medida que avançam, eles podem encontrar eventos, desafios ou bônus. A trilha pode ter diferentes ramificações e obstáculos, exigindo que os jogadores tomem decisões estratégicas sobre como e quando se mover.",
+        tags: ["movimentação", "caminho", "eventos", "estratégia", "mecânicas"]
+    },
+    {
+        nome: "Construção de Deck - Explicação da mecânica",
+        descricao: "A construção de deck é uma mecânica onde os jogadores montam e personalizam um baralho de cartas que será utilizado durante o jogo. Eles escolhem cartas que representam ações, habilidades ou recursos, e cada jogador tem um deck único. Durante o jogo, os jogadores usam seu deck para realizar ações, enfrentar adversários ou alcançar objetivos.",
+        tags: ["cartas", "personalização", "estratégia", "baralho", "mecânicas"]
+    },
+    {
+        nome: "Rolagem de Dados - Explicação da mecânica",
+        descricao: "A rolagem de dados envolve lançar dados para determinar o resultado de ações ou eventos no jogo. Cada dado pode ter diferentes faces e valores, que introduzem um elemento de aleatoriedade. Os resultados dos dados podem influenciar o sucesso de uma ação, determinar eventos aleatórios ou afetar a dinâmica do jogo.",
+        tags: ["sorte", "aleatoriedade", "resultados", "dados", "mecânicas"]
+    },
+    {
+        nome: "Controle de Área - Explicação da mecânica",
+        descricao: "Na mecânica de controle de área, os jogadores competem para dominar áreas específicas do tabuleiro. Eles colocam peças, marcadores ou controle sobre regiões para obter vantagens ou pontos. O objetivo é controlar o maior número de áreas ou pontos estratégicos, enquanto impede que os adversários façam o mesmo.",
+        tags: ["domínio", "território", "controle", "estratégia", "mecânicas"]
     }
 ];

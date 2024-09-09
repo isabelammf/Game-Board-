@@ -3,68 +3,70 @@ function primeiraLetraMaiuscula(texto) {
     return `${texto.charAt(0).toUpperCase()}${texto.slice(1)}`;
 }
 
+// Função para criar o HTML dos resultados
+function criarResultadoHTML(dado) {
+    return `
+        <div class="item-resultado">
+            <h2>${dado.nome}</h2>
+            <p class="descricao-meta">${dado.descricao}</p>
+            ${dado.editora ? `<p><strong>Editora:</strong> ${dado.editora}</p>` : ''}
+            ${dado.numeroJogadores ? `<p><strong>Número de Jogadores:</strong> ${dado.numeroJogadores.min} a ${dado.numeroJogadores.max}</p>` : ''}
+            ${dado.idadeRecomendada ? `<p><strong>Idade Recomendada:</strong> ${dado.idadeRecomendada}</p>` : ''}
+            ${dado.tempoMedio ? `<p><strong>Tempo Médio:</strong> ${dado.tempoMedio}</p>` : ''}
+            ${dado.mecanicas ? `<p><strong>Mecânicas:</strong> ${dado.mecanicas.map(primeiraLetraMaiuscula).join(", ")}</p>` : ''}
+            ${dado.complexidade ? `<p><strong>Complexidade:</strong> ${primeiraLetraMaiuscula(dado.complexidade)}</p>` : ''}
+            ${dado.avaliacao ? `<p><strong>Avaliação:</strong> ${dado.avaliacao}</p>` : ''}
+        </div>
+    `;
+}
+
+// Função para verificar se o texto de pesquisa está presente em um array
+function presencaTexto(texto, pesquisa) {
+    return texto.toLowerCase().includes(pesquisa.toLowerCase());
+}
+
 function pesquisar() {
     // Adiciona a classe 'pesquisa-ativa' ao body para mudar o estilo da página após a pesquisa
     document.body.classList.add('pesquisa-ativa');
-    
+    // Remove a classe 'pesquisa-ativa-p' do body
+    document.body.classList.remove('pesquisa-ativa-p');
+
     // Obtém a seção HTML onde os resultados serão exibidos
     let section = document.getElementById("resultados-pesquisa");
 
     // Obtém o valor dentro do campo de pesquisa e converte para minúsculas
-    let campoPesquisa = document.getElementById("campo-pesquisa").value.toLowerCase();
+    let campoPesquisa = document.getElementById("campo-pesquisa").value;
 
     // Inicializa uma variável vazia para armazenar os resultados
     let resultados = "";
-    let nome = "";
-    let mecanicas = [];
-    let tags = [];
-    
+
     // Se o campo de pesquisa estiver vazio, exibe todos os resultados apenas os nomes dos jogos
     if (!campoPesquisa) {
-        for (let dado of dados) {
-            resultados += `
-            <div class="item-resultado" id="all">
-                <h2>
-                    <a href="#" target="_blank">${dado.nome}</a>
-                </h2>
-            </div>
-        `;
-        }
+        // Cria um bloco HTML com o nome de cada item
+        resultados = dados.map(dado => `<div class="item-resultado" id="all"><h2>${dado.nome}</h2></div>`).join('');
     } else {
         // Se há um texto na pesquisa, filtra os dados
         for (let dado of dados) {
-            nome = dado.nome.toLowerCase(); // Nome do jogo em minúsculas
-            mecanicas = dado.mecanicas.map(i => i.toLowerCase()); // Mecânicas em minúsculas
-            tags = dado.tags.map(i => i.toLowerCase()); // Tags em minúsculas
+            // Obtém o nome do dado
+            let nome = dado.nome;
+            // Concatena e transforma as tags em minúsculas, se existirem
+            let tags = dado.tags ? dado.tags.join(' ').toLowerCase() : '';
+            // Concatena e transforma as mecânicas em minúsculas, se existirem
+            let mecanicas = dado.mecanicas ? dado.mecanicas.join(' ').toLowerCase() : '';
 
-            // Verifica se o campo de pesquisa está presente no nome, nas mecânicas ou nas tags
-            if (
-                nome.includes(campoPesquisa) || 
-                mecanicas.some(mecanica => mecanica.includes(campoPesquisa)) || 
-                tags.some(tag => tag.includes(campoPesquisa))
-            ) {
-                // Cria um novo elemento para o resultado se houver correspondência
-                resultados += `
-                    <div class="item-resultado">
-                        <h2>
-                            <a href="#" target="_blank">${dado.nome}</a>
-                        </h2>
-                        <p class="descricao-meta">${dado.descricao}</p>
-                        <p><strong>Editora:</strong> ${dado.editora}</p>
-                        <p><strong>Número de Jogadores:</strong> ${dado.numeroJogadores.min} a ${dado.numeroJogadores.max}</p>
-                        <p><strong>Idade Recomendada:</strong> ${dado.idadeRecomendada}</p>
-                        <p><strong>Tempo Médio:</strong> ${dado.tempoMedio}</p>
-                        <p><strong>Mecânicas:</strong> ${dado.mecanicas.map(mecanica => primeiraLetraMaiuscula(mecanica)).join(", ")}</p>
-                        <p><strong>Complexidade:</strong> ${primeiraLetraMaiuscula(dado.complexidade)}</p>
-                        <p><strong>Avaliação:</strong> ${dado.avaliacao}</p>
-                    </div>
-                `;
+            // Verifica se o texto de pesquisa está presente no nome, nas tags ou nas mecânicas
+            if (presencaTexto(nome, campoPesquisa) || presencaTexto(tags, campoPesquisa) || presencaTexto(mecanicas, campoPesquisa)) {
+                // Adiciona o HTML gerado para o dado ao resultado
+                resultados += criarResultadoHTML(dado);
             }
         }
     }
 
     // Se não houver resultados, exibe uma mensagem informando que nada foi encontrado
     if (!resultados) {
+        // Adiciona a classe 'pesquisa-ativa-p' ao body para exibir a mensagem de nenhuma correspondência
+        document.body.classList.add('pesquisa-ativa-p');
+        // Define o resultado como uma mensagem de "Nada foi encontrado"
         resultados = "<p>Nada foi encontrado</p>";
     }
 
